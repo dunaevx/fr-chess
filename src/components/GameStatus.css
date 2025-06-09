@@ -1,0 +1,151 @@
+/* Обёртка всей игры */
+.game-box {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 24px;
+    background: #f7f9fb;
+    border-radius: 12px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+    color: #333;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.p1 {
+    font-size: 12px;
+}
+/* Блок с доской и таймерами */
+.board-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 16px;
+}
+
+.player-timer {
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+    padding: 8px 12px;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 8px;
+    background-color: #f0f4f8;
+    color: #1a1a1a;
+}
+
+.player-timer.top {
+    margin-bottom: 10px;
+    background-color: #e8eef5;
+}
+
+.player-timer.bottom {
+    margin-top: 10px;
+    background-color: #f5f8fa;
+}
+
+/* Боковая панель с инфо и чатом */
+.info-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background-color: #ffffff;
+    padding: 16px;
+    border-radius: 12px;
+    min-width: 280px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.info-panel p {
+    margin: 4px 0;
+    line-height: 1.5;
+}
+
+/* Текст ошибки */
+.error-text {
+    color: #d32f2f;
+    font-weight: bold;
+}
+
+/* Завершение игры */
+.game-result {
+    margin-top: 12px;
+    padding: 12px;
+    background-color: #fff3cd;
+    border-left: 4px solid #ffeeba;
+    border-radius: 8px;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.game-result .font-bold {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Кнопки */
+.control-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 15px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    font-weight: 600;
+}
+
+.btn-danger {
+    background-color: #e53935;
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #d32f2f;
+}
+
+.btn-active {
+    background-color: #1976d2;
+    color: white;
+}
+
+.btn-active:hover {
+    background-color: #1565c0;
+}
+
+.btn-disabled {
+    background-color: #e0e0e0;
+    color: #9e9e9e;
+    cursor: not-allowed;
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+    .game-box {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .player-timer {
+        width: 100%;
+    }
+}
